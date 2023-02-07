@@ -19,7 +19,7 @@ class EDF:
                 (_, top_task) = self.q.get_nowait()
                 if self.running_task is None:
                     self.running_task = top_task
-                elif top_task.deadline() < self.running_task.deadline():
+                elif top_task.at + top_task.deadline() < self.running_task.at + self.running_task.deadline():
                     self.add_task(self.running_task)
                     self.running_task = top_task
                 else:
