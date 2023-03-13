@@ -34,14 +34,17 @@ class Task:
 class DeadlinedTask(Task):
 
     def __init__(self, name, at, bt, dl):
-        super().__init__(self, name, at, bt)
+        super(DeadlinedTask, self).__init__(name, at, bt)
         self.dl = dl
 
 
 class FixedDeadlinedTask(DeadlinedTask):
 
     def __init__(self, name, at, bt, dl):
-        super().__init__(self, name, at, bt, dl)
+        super(FixedDeadlinedTask, self).__init__(name, at, bt, dl)
+
+    def __lt__(self, other):
+        return self.dl < other.dl
 
     def deadline(self):
         return self.dl

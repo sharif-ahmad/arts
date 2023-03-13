@@ -35,20 +35,19 @@ def srtf_add_tasks(env):
 
 
 def dm_add_tasks(env):
-    srft.add_task(task.FixedDeadlinedTask(1, env.now, 3, 7))
-    srft.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
-    srft.add_task(task.FixedDeadlinedTask(3, env.now, 2, 9))
+    dm.add_task(task.FixedDeadlinedTask(1, env.now, 3, 7))
+    dm.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
+    dm.add_task(task.FixedDeadlinedTask(3, env.now, 2, 9))
     yield env.timeout(5)
-    srft.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
+    dm.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
     yield env.timeout(5)
-    srft.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
-    srft.add_task(task.FixedDeadlinedTask(3, env.now, 2, 9))
+    dm.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
+    dm.add_task(task.FixedDeadlinedTask(3, env.now, 2, 9))
     yield env.timeout(5)
-    srft.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
+    dm.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
     yield env.timeout(5)
-    srft.add_task(task.FixedDeadlinedTask(1, env.now, 3, 7))
-    srft.add_task(task.FixedDeadlinedTask(2, env.now, 2, 4))
-    srft.add_task(task.FixedDeadlinedTask(3, env.now, 2, 9))
+    dm.add_task(task.FixedDeadlinedTask(1, env.now, 3, 7))
+    dm.add_task(task.FixedDeadlinedTask(3, env.now, 2, 9))
 
 
 def edf_add_tasks(env):
